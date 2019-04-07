@@ -23,6 +23,13 @@ body {
             }
             .mat-expansion-panel {
                 margin-bottom: 0.5%;
+                background-color: #f4f4f4;
+                .mat-form-field {
+                    width: 70%;
+                }
+                mat-label {
+                    color: blue;
+                }
             }
         }
     }

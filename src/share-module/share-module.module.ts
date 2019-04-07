@@ -8,6 +8,9 @@ import {
   MatTabsModule,
   MatExpansionModule,
   MatInputModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
@@ -21,6 +24,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTabsModule,
     MatExpansionModule,
     MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatFormFieldModule,
     FlexLayoutModule 
   ],
   exports:[
@@ -31,6 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTabsModule,
     MatExpansionModule,
     MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
     FlexLayoutModule
   ]
 })

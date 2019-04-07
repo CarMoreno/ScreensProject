@@ -8,17 +8,21 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PrGeneralTabsComponent } from './pr-general-tabs/pr-general-tabs.component';
 import { PrTercerosComponent } from './pr-terceros/pr-terceros.component';
 import { PrRadicacionComponent } from './pr-radicacion/pr-radicacion.component';
+import { PrFormTipoTerceroComponent } from './pr-terceros/forms/pr-form-tipo-tercero/pr-form-tipo-tercero.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     PrGeneralTabsComponent,
     PrTercerosComponent,
-    PrRadicacionComponent
+    PrRadicacionComponent,
+    PrFormTipoTerceroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ShareModule
   ],
   providers: [],
