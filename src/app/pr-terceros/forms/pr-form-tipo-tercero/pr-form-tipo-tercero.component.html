@@ -1,57 +1,56 @@
-<form [formGroup]="formTipoTercero" (submit)="save()" fxLayoutGap="15px" fxLayout="column">
-  
-    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <mat-checkbox color="primary" formControlName="editarDatosTercero">Editar Datos del Tercero</mat-checkbox>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <div fxFlex="100%">
-          <div fxLayout="row">
-            <mat-label for="" color="primary">Entidad o Ciudadano *</mat-label>
-          </div>
-        <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
-          <input matInput type="text" placeholder="Pick one" aria-label="Number" formControlName="entidadCiudadano">
-        </mat-form-field>
-        <div class="has-error" *ngIf="formTipoTercero.get('entidadCiudadano').hasError('required') && formTipoTercero.get('entidadCiudadano').touched">
-          Este campo es requerido
-        </div>  
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <div fxFlex="100%">
+<div fxLayoutGap="15px" fxLayout="column" [formGroup]="formularioCiudadano">
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+    <mat-checkbox color="primary" formControlName="editarDatosTercero">Editar Datos del Tercero</mat-checkbox>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+    <div fxFlex="100%">
         <div fxLayout="row">
-          <mat-label for="">Tipo de Tercero *</mat-label>
+          <mat-label for="" color="primary">Entidad o Ciudadano *</mat-label>
         </div>
-        <mat-form-field>
-          <mat-select formControlName="tipoTercero">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div class="has-error" *ngIf="formTipoTercero.get('tipoTercero').hasError('required') && formTipoTercero.get('tipoTercero').touched">
-          Este campo es requerido
-        </div>
+      <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
+        <input matInput type="text" placeholder="Pick one" aria-label="Number" formControlName="entidadCiudadano">
+      </mat-form-field>
+      <div class="has-error" *ngIf="formularioCiudadano.get('entidadCiudadano').hasError('required') && formularioCiudadano.get('entidadCiudadano').touched">
+        Este campo es requerido
+      </div>  
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+    <div fxFlex="100%">
+      <div fxLayout="row">
+        <mat-label for="">Tipo de Tercero *</mat-label>
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="tipoTercero">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="has-error" *ngIf="formularioCiudadano.get('tipoTercero').hasError('required') && formularioCiudadano.get('tipoTercero').touched">
+        Este campo es requerido
       </div>
     </div>
-    <!-- <div [hidden]="profile.valid">Invalid</div> -->
-    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <div fxFlex="100%">
-        <div fxLayout="row">
-          <mat-label for="">Tipo de Identificacion *</mat-label>
-        </div>
-        <mat-form-field>
-          <mat-select formControlName="tipoIdentificacion">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div class="has-error" *ngIf="formTipoTercero.get('tipoIdentificacion').hasError('required') && formTipoTercero.get('tipoIdentificacion').touched">
-          Este campo es requerido
-        </div>
+  </div>
+  <!-- <div [hidden]="profile.valid">Invalid</div> -->
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+    <div fxFlex="100%">
+      <div fxLayout="row">
+        <mat-label for="">Tipo de Identificacion *</mat-label>
+      </div>
+      <mat-form-field>
+        <mat-select formControlName="tipoIdentificacion">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="has-error" *ngIf="formularioCiudadano.get('tipoIdentificacion').hasError('required') && formularioCiudadano.get('tipoIdentificacion').touched">
+        Este campo es requerido
       </div>
     </div>
-    <!-- <div [hidden]="tipoIdentificacion.valid">Invalid</div> -->
-  
-    <!-- <button type="submit">Submit</button> -->
-  </form>
+  </div>
+  <!-- <div [hidden]="tipoIdentificacion.valid">Invalid</div> -->
+
+  <!-- <button type="submit">Submit</button> -->
+</div>

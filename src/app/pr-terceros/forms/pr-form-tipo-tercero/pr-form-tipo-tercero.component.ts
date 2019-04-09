@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PrFormTipoTerceroComponent implements OnInit {
 
-  public formTipoTercero: FormGroup;
+  @Input('formularioCiudadano') formularioCiudadano: FormGroup;
   public foods: Array<object> = [
     {value: 'steak-0', viewValue: 'Steak'},
     {value: 'pizza-1', viewValue: 'Pizza'},
@@ -16,26 +16,10 @@ export class PrFormTipoTerceroComponent implements OnInit {
   ];
   public options: string[] = ['One', 'Two', 'Three'];
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getForm();
+    console.log('this.formularioCiudadano :', this.formularioCiudadano);
   }
 
-  /**
-   * Retorna el formulario de tipo de terceros
-   */
-  private getForm(): FormGroup{
-    this.formTipoTercero = this.formBuilder.group({
-      'editarDatosTercero':['',Validators.required],
-      'entidadCiudadano': ['',Validators.required],
-      'tipoTercero': ['',Validators.required],
-      'tipoIdentificacion': ['',Validators.required]
-    });
-    return this.formTipoTercero;
-  }
-
-  public save(): void {
-    console.log('editarDatosTercero: ', this.formTipoTercero.get('editarDatosTercero').value);
-  }
 }
