@@ -17,7 +17,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Datos Básicos - Persona Natural</mat-panel-title>
               </mat-expansion-panel-header>
-              <pr-form-datos-basicos-persona-natural [formularioCiudadano]="formularioCiudadano"></pr-form-datos-basicos-persona-natural>
+              <pr-form-datos-basicos-persona-natural *ngIf="formularioCiudadano" [formularioCiudadano]="formularioCiudadano"></pr-form-datos-basicos-persona-natural>
             </mat-expansion-panel>
             <mat-expansion-panel>
             <!--./ FORMULARIO DATOS BASICOS - PERSONA NATURAL -->
@@ -26,7 +26,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Datos Básicos - Persona Jurídica</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>Hola Mundo</p>
+              <pr-form-datos-basicos-persona-juridica *ngIf="formularioCiudadano" [formularioCiudadano]="formularioCiudadano"></pr-form-datos-basicos-persona-juridica>
             </mat-expansion-panel>
             <!--./ FORMULARIO DATOS BASICOS - PERSONA NATURAL -->
   

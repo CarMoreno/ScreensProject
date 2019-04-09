@@ -2,7 +2,7 @@
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
       <div fxFlex="100%">
           <div fxLayout="row">
-            <mat-label for="" color="primary">Número de Identificación *</mat-label>
+            <mat-label class="field-name" for="" color="primary">Número de Identificación *</mat-label>
           </div>
         <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
           <input matInput type="text" placeholder="" aria-label="Number" formControlName="identificacion" maxlength="21">
@@ -10,19 +10,11 @@
         <div class="has-error" *ngIf="formularioCiudadano.get('identificacion').hasError('required') && formularioCiudadano.get('identificacion').touched">
           Este campo es requerido
         </div>  
-      </div>
-    </div>
-
-    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <div fxFlex="100%">
-          <div fxLayout="row">
-            <mat-label for="" color="primary">Nombres *</mat-label>
-          </div>
-        <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
-          <input matInput type="text" placeholder="" aria-label="Number" formControlName="nombres" maxlength="51">
-        </mat-form-field>
-        <div class="has-error" *ngIf="formularioCiudadano.get('nombres').hasError('required') && formularioCiudadano.get('nombres').touched">
-          Este campo es requerido
+        <div class="has-error" *ngIf="formularioCiudadano.get('identificacion').hasError('pattern') && formularioCiudadano.get('identificacion').touched">
+          Este campo debe ser alfanumérico sin espacios
+        </div>  
+        <div class="has-error" *ngIf="formularioCiudadano.get('identificacion').hasError('maxlength') && formularioCiudadano.get('identificacion').touched">
+          Este campo debe tener máximo 20 caracteres
         </div>  
       </div>
     </div>
@@ -30,13 +22,40 @@
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
       <div fxFlex="100%">
           <div fxLayout="row">
-            <mat-label for="" color="primary">Apellidos *</mat-label>
+            <mat-label class="field-name" for="" color="primary">Nombres *</mat-label>
+          </div>
+        <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
+          <input matInput type="text" placeholder="" aria-label="Number" formControlName="nombres" maxlength="51">
+        </mat-form-field>
+        {{formularioCiudadano.get('nombres').hasError('pattern') | json}}
+        <div class="has-error" *ngIf="formularioCiudadano.get('nombres').hasError('required') && formularioCiudadano.get('nombres').touched">
+          Este campo es requerido
+        </div>  
+        <div class="has-error" *ngIf="formularioCiudadano.get('nombres').hasError('pattern') && formularioCiudadano.get('nombres').touched">
+          Este campo debe ser alfanumérico
+        </div>  
+        <div class="has-error" *ngIf="formularioCiudadano.get('nombres').hasError('maxlength') && formularioCiudadano.get('nombres').touched">
+          Este campo debe tener máximo 50 caracteres
+        </div>  
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
+      <div fxFlex="100%">
+          <div fxLayout="row">
+            <mat-label class="field-name" for="" color="primary">Apellidos *</mat-label>
           </div>
         <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
           <input matInput type="text" placeholder="" aria-label="Number" formControlName="apellidos" maxlength="51">
         </mat-form-field>
         <div class="has-error" *ngIf="formularioCiudadano.get('apellidos').hasError('required') && formularioCiudadano.get('apellidos').touched">
           Este campo es requerido
+        </div>
+        <div class="has-error" *ngIf="formularioCiudadano.get('apellidos').hasError('pattern') && formularioCiudadano.get('apellidos').touched">
+          Este campo debe ser alfanumérico
+        </div>  
+        <div class="has-error" *ngIf="formularioCiudadano.get('apellidos').hasError('maxlength') && formularioCiudadano.get('apellidos').touched">
+            Este campo debe ser alfanumerico
         </div>  
       </div>
     </div>
@@ -44,7 +63,7 @@
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
       <div fxFlex="100%">
           <div fxLayout="row">
-            <mat-label for="" color="primary">Vincular a Persona Jurídica</mat-label> <!--CAMBIAR POR COMPONENTE PR-AUTOCOMPLETE-->
+            <mat-label class="field-name" for="" color="primary">Vincular a Persona Jurídica</mat-label> <!--CAMBIAR POR COMPONENTE PR-AUTOCOMPLETE-->
           </div>
         <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
           <input matInput type="text" placeholder="" aria-label="Number" formControlName="apellidos">
@@ -55,10 +74,10 @@
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx">
       <div fxFlex="100%">
           <div fxLayout="row">
-            <mat-label for="" color="primary">Grupo Minoritario</mat-label>
+            <mat-label class="field-name" for="" color="primary">Grupo Minoritario</mat-label>
           </div>
         <mat-form-field>
-          <mat-label>Seleccione</mat-label>
+          <mat-label>Seleccione...</mat-label>
           <mat-select multiple formControlName="grupoMinoritario">
             <mat-option *ngFor="let minoria of listaMinorias" [value]="minoria">{{minoria}}</mat-option>
           </mat-select>

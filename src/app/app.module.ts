@@ -11,6 +11,7 @@ import { PrRadicacionComponent } from './pr-radicacion/pr-radicacion.component';
 import { PrFormTipoTerceroComponent } from './pr-terceros/forms/pr-form-tipo-tercero/pr-form-tipo-tercero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrFormDatosBasicosPersonaNaturalComponent } from './pr-terceros/forms/pr-form-datos-basicos-persona-natural/pr-form-datos-basicos-persona-natural.component';
+import { PrFormDatosBasicosPersonaJuridicaComponent } from './pr-terceros/forms/pr-form-datos-basicos-persona-juridica/pr-form-datos-basicos-persona-juridica.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { PrFormDatosBasicosPersonaNaturalComponent } from './pr-terceros/forms/p
     PrTercerosComponent,
     PrRadicacionComponent,
     PrFormTipoTerceroComponent,
-    PrFormDatosBasicosPersonaNaturalComponent
+    PrFormDatosBasicosPersonaNaturalComponent,
+    PrFormDatosBasicosPersonaJuridicaComponent
   ],
   imports: [
     BrowserModule,

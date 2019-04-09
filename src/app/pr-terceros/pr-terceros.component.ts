@@ -28,11 +28,14 @@ export class PrTercerosComponent implements OnInit {
       'entidadCiudadano': ['',Validators.required],
       'tipoTercero': ['',Validators.required],
       'tipoIdentificacion': ['',Validators.required],
-      'identificacion': ['', [Validators.required, Validators.pattern('/[A-Za-z0-9]{0,20}$/')]],
-      'nombres': ['', Validators.required, Validators.pattern('/[A-Za-z0-9ÁÉÍÓÚáéíóúñü]{3,50}$/')],  
-      'apellidos': ['', Validators.required, Validators.pattern('/[A-Za-z0-9ÁÉÍÓÚáéíóúñü]{3,50}$/')],
+      'identificacion': ['', [Validators.required, Validators.pattern('[A-Za-z0-9]{2,}$'), Validators.maxLength(20)]],
+      'nombres': ['', [Validators.required, Validators.pattern('[A-Za-z0-9ÁÉÍÓÚáéíóúñü ]{3,}$'), Validators.maxLength(50)]],  
+      'apellidos': ['', [Validators.required, Validators.pattern('[A-Za-z0-9ÁÉÍÓÚáéíóúñü ]{3,}$'), Validators.maxLength(50)]],
       'vincularJuridico': ['', Validators.pattern('/[A-Za-z0-9ÁÉÍÓÚáéíóúñü]{3,50}$/')],
       'grupoMinoritario': ['', null],
+      'NIT': ['', [Validators.pattern('/[A-Za-z0-9]{0,20}$/')]],
+      'digitoVerificacion': ['', [Validators.pattern('/[0-9]{0,1}$/')]],
+      'razonSocial': ['', [Validators.pattern('/[A-Za-z0-9]{0,150}$/')]]
     });
     return this.formularioCiudadano;
   }
