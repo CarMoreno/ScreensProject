@@ -13,6 +13,7 @@ import {
   MatFormFieldModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PRDesignModule } from 'src/prdesign-module/prdesign-module.module';
 @NgModule({
   declarations: [],
   imports: [
@@ -27,7 +28,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatOptionModule,
     MatFormFieldModule,
-    FlexLayoutModule 
+    FlexLayoutModule ,
+    PRDesignModule
   ],
   exports:[
     MatButtonModule,
@@ -39,7 +41,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    PRDesignModule
   ]
 })
 export class ShareModule { }

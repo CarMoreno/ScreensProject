@@ -33,9 +33,10 @@ export class PrTercerosComponent implements OnInit {
       'apellidos': ['', [Validators.required, Validators.pattern('[A-Za-z0-9ÁÉÍÓÚáéíóúñü ]{3,}$'), Validators.maxLength(50)]],
       'vincularJuridico': ['', Validators.pattern('/[A-Za-z0-9ÁÉÍÓÚáéíóúñü]{3,50}$/')],
       'grupoMinoritario': ['', null],
-      'NIT': ['', [Validators.pattern('/[A-Za-z0-9]{0,20}$/')]],
-      'digitoVerificacion': ['', [Validators.pattern('/[0-9]{0,1}$/')]],
-      'razonSocial': ['', [Validators.pattern('/[A-Za-z0-9]{0,150}$/')]]
+      'NIT': ['', [Validators.pattern('[A-Za-z0-9]{2,}$'), Validators.maxLength(20)]],
+      'digitoVerificacion': ['', [Validators.pattern('[0-9]$'), Validators.maxLength(1)]],
+      'razonSocial': ['', [Validators.required, Validators.pattern('/[A-Za-z0-9]{2,}$/'), Validators.maxLength(150)]],
+      'clasificacion': ['',Validators.required], // Clasificacion persona juridica
     });
     return this.formularioCiudadano;
   }

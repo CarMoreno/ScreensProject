@@ -27,7 +27,6 @@
         <mat-form-field class="example-full-width"> <!-- Se debe cambiar por pr-autocomplete-->
           <input matInput type="text" placeholder="" aria-label="Number" formControlName="nombres" maxlength="51">
         </mat-form-field>
-        {{formularioCiudadano.get('nombres').hasError('pattern') | json}}
         <div class="has-error" *ngIf="formularioCiudadano.get('nombres').hasError('required') && formularioCiudadano.get('nombres').touched">
           Este campo es requerido
         </div>  
